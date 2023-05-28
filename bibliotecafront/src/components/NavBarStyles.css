@@ -1,0 +1,52 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #325453;
+    padding: 20px 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#navbar li{
+    list-style: none;
+    padding: 0 30px;
+    position: relative;
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: aliceblue;
+    transition: 0.17s ease-in-out;
+}
+#navbar li a:hover{
+    color: #DCBE87;
+}
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #DCBE87;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+#bibliogo{
+    width: 12%;
+    height: 12%;
+}
+#bibliogo:hover{
+    transition: 0.1s ease-in-out;
+    animation: rotate 0.7s infinite alternate;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{transform: rotate(20deg);}
+}
