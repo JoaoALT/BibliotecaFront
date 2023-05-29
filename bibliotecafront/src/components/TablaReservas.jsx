@@ -1,6 +1,6 @@
 import "./TablaStyles.css"
 
-export const TablaReservas =  ({listaLibros, libroreservado}) => {
+export const TablaReservas =  ({listaLibros, borrarReserva}) => {
 
     /*
     const ClickedBook = (book) =>{
@@ -12,7 +12,6 @@ export const TablaReservas =  ({listaLibros, libroreservado}) => {
     }
     onClick={ClickedBook(libro)}
     */
-      
 
     return (
         <>
@@ -43,7 +42,7 @@ export const TablaReservas =  ({listaLibros, libroreservado}) => {
                             <td>{libro.semanas}</td>
                             <td>{libro.dias}</td>
                             <td> 
-                            <button class="button-5" role="button" >Eliminar</button> 
+                            <button class="button-5" onClick={() => borrarReserva(libro)}>Eliminar</button> 
                             </td>
 
                         </tr>)

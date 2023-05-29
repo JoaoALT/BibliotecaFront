@@ -9,7 +9,16 @@ export const Menu = () => {
     const [librosFilt, setLibrosFilt] = useState([]);
 
     const DataFiltered = (data) => {
-        setLibrosFilt(data)
+        if (data.length == 0){
+            showAll();
+        }
+        else{
+            setLibrosFilt(data)
+        }
+    }
+
+    const showAll = () =>{
+        setLibrosFilt(libros);
     }
 
     const cargarLibros = async () => {
