@@ -6,16 +6,16 @@ import logo from "./book.png";
 export const NavBar = () => {
     return(
         <nav>
-            <a href="https://www.flaticon.com/free-icons/book" title="book icons"><img src={logo} alt="logo" id="bibliogo"/></a>
+            <a href="index.html" title="book icons"><img src={logo} alt="logo" id="bibliogo"/></a>
             <ul id ="navbar">
                 <li>
                     <a href="index.html" className="active">
-                    <Link to ="/Lobby">About</Link>
+                    <Link to ="/Lobby">Información general</Link>
                     </a>
                 </li>
                 <li>
                     <a href="index.html" className="active">
-                        <Link to ="/Menu">Menu</Link>
+                        <Link to ="/Menu">Libros</Link>
                     </a>
                     
                 </li>
