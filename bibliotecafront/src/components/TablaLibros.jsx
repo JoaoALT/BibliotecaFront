@@ -1,6 +1,6 @@
 import "./TablaStyles.css"
 
-export const Tablalibro =  ({listaLibros, libroreservado}) => {
+export const Tablalibro =  ({listaLibros, reservation}) => {
 
     /*
     const ClickedBook = (book) =>{
@@ -12,6 +12,17 @@ export const Tablalibro =  ({listaLibros, libroreservado}) => {
     }
     onClick={ClickedBook(libro)}
     */
+
+    const reserv = (book) =>{
+
+        const newbook = {
+            titulo: book.titulo,
+            id: book.id
+        }
+        console.log(newbook);
+
+        reservation(newbook);
+    }
       
 
     return (
@@ -41,7 +52,7 @@ export const Tablalibro =  ({listaLibros, libroreservado}) => {
                             <td>{libro.paginas}</td>
                             <td id="estado">{libro.estado}</td>
                             <td> 
-                            <button class="button-5" role="button" >Reservar</button> 
+                            <button class="button-5" role="button" onClick={() =>reserv(libro)}>Reservar</button> 
                             </td>
 
                         </tr>)
