@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { TablaReservas } from "../components/TablaReservas";
 import { getReservas } from "../requests/getReservas";
 import { SearchBar } from "../components/SearchBar";
+import {deleteReserva} from "../requests/deleteReserva"
 import "./MenuStyles.css";
 
 export const Reservas = () => {
@@ -9,7 +10,11 @@ export const Reservas = () => {
     const [reservasFilt, setReservasFilt] = useState([]);
 
     const DataFiltered = (data) => {
-        setReservasFilt(data)
+        if (data.length == 0){
+            showAll();
+        }else{
+            setReservasFilt(data)
+        }
     }
 
     const cargarReservas = async () => {
@@ -18,7 +23,21 @@ export const Reservas = () => {
     }
 
     if (reservas.length == 0){
-        cargarReservas()
+        cargarReservas();
+    }
+    
+    const showAll = () =>{
+        setReservasFilt(reservas);
+    }
+
+    const borrarReserva = (reserva) =>{
+        let opcion = window.confirm("¿Realmente desea borrar su reserva?")
+
+        if(opcion){
+            deleteReserva(reserva.rut);
+            showAll();
+        }
+
     }
 
     /*const libroreservado =  (book) => {
@@ -30,11 +49,10 @@ export const Reservas = () => {
     return(
         <>
 
-            <title>AAAAAAAAAAAAAAAA</title>
-            <SearchBar placeholder={"Ingrese el titulo del libro, autor, formato..."} data={reservas} DataFiltered={DataFiltered} page={1}></SearchBar>
+            <SearchBar placeholder={"Ingrese su nombre, apellido..."} data={reservas} DataFiltered={DataFiltered} page={1}></SearchBar>
 
            
-            <TablaReservas listaLibros={reservasFilt} data={reservas}></TablaReservas>
+            <TablaReservas listaLibros={reservasFilt} data={reservas} borrarReserva={borrarReserva}></TablaReservas>
         </>
     )
 }
