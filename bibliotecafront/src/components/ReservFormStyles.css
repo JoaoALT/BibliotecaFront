@@ -1,0 +1,40 @@
+body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #517174, #ef5d58);
+    padding: 10px;
+    
+}
+.container1{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+}
+.title{
+    position: relative;
+    padding: 0px 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: aliceblue;
+}
+ .title::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+}
+
+.form1 .container1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form1 .container1 .inputbox{
+    width: calc(100% / 2-20px)
+}
+
+.form1 .container1 .inputbox input{
+    height: 45px;
+}
